@@ -1,0 +1,15 @@
+.hidden-input{
+    display: none;
+}
+
+canvas { border-style: solid }
+
+.example-header-image {
+    background-image: url('https://w0.pngwave.com/png/309/240/identity-document-identification-driving-license-png-clip-art.png');
+    background-size: cover;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }

@@ -1,0 +1,82 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>photo_camera</mat-icon>
+    </button>
+    <span >Capture</span>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="uploadFile.click()">
+        <mat-icon>face</mat-icon>
+        <span>INE Recognize</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
+
+<div class="row">
+    <div class="col-md-12">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>
+                    <span>MEXICAN VOTER FRONT</span>
+                </mat-card-title>
+                <mat-card-subtitle>{{fullNameData}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+            </mat-card-content>
+            <mat-card-footer>
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Personal data
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          Type your name and age
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+
+                      <mat-list>
+                        <mat-list-item>
+                          <mat-icon mat-list-icon>keyboard_arrow_right</mat-icon>
+                          <h4 mat-line>FULL NAME</h4>
+                          <p mat-line>{{fullNameData}}</p>
+                        </mat-list-item>
+                        <mat-list-item >
+                            <mat-icon mat-list-icon>keyboard_arrow_right</mat-icon>
+                            <h4 mat-line>ADDRESS</h4>
+                            <p mat-line>{{addressData}}</p>
+                        </mat-list-item>
+                        <mat-list-item >
+                            <mat-icon mat-list-icon>keyboard_arrow_right</mat-icon>
+                            <h4 mat-line>ELECTOR KEY</h4>
+                            <p mat-line>{{electoryKeyData}}</p>
+                        </mat-list-item>
+                        <mat-list-item >
+                            <mat-icon mat-list-icon>keyboard_arrow_right</mat-icon>
+                            <h4 mat-line>DATE OF BIRTH</h4>
+                            <p mat-line>{{dateOfBirthData}}</p>
+                        </mat-list-item>
+                        <mat-list-item >
+                            <mat-icon mat-list-icon>keyboard_arrow_right</mat-icon>
+                            <h4 mat-line>SEX</h4>
+                            <p mat-line>{{sexData}}</p>
+                        </mat-list-item>
+                      </mat-list>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+
+            </mat-card-footer>
+        </mat-card>
+        
+    </div>
+</div>
+<input
+    #uploadFile
+    type="file" 
+    (change)="onImageChange($event)"
+    id="uploadFile"
+    class="hidden-input"
+    accept="image/*" 
+    capture="camera"/>
