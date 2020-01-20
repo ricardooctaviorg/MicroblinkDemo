@@ -10,9 +10,6 @@ import { Ng2ImgMaxService } from 'ng2-img-max';
   styleUrls: ['./main-frame.component.css']
 })
 
-
-
-
 export class MainFrameComponent implements OnInit {
 
   
