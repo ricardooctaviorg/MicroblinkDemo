@@ -30,10 +30,10 @@
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                Personal data
+                                <span>Personal data</span>
                             </mat-panel-title>
                             <mat-panel-description>
-                                Type your name and age
+                                <span>Your name, and Elector Key</span>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
 
@@ -72,4 +72,10 @@
 
     </div>
 </div>
-<input #uploadFile type="file" (change)="onImageChange($event)" id="uploadFile" class="hidden-input" accept="image/*" capture="camera" />
+<input #uploadFile 
+        type="file" 
+        (change)="onImageChange($event)" 
+        id="uploadFile" 
+        class="hidden-input" 
+        accept="image/*" 
+        capture="camera"/>
